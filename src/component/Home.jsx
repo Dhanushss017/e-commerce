@@ -70,8 +70,6 @@ const Home = () => {
               className="btn btn_success rounded shadow-none"
               data-bs-toggle="offcanvas"
               href="#mobile-navbar"
-              role="button"
-              aria-controls="mobile-navbar"
             >
               <span className="fa fa-bars fa-lg "></span>
             </button>
@@ -90,7 +88,7 @@ const Home = () => {
             id="mobile-navbar"
             aria-labelledby="mobile-navbarLabel"
           >
-            <div className="offcanvas-header">
+            <div className="offcanvas-header ms-auto">
               
               <button
                 type="button"
