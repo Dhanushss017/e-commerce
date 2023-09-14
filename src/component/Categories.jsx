@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useMemo} from "react";
 import { Link } from "react-router-dom";
 import "./Style.css";
+
+
 
 const Categories = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCategories, setFilteredCategories] = useState([]);
   console.log(searchQuery)
-  useEffect(() => {
-    setFilteredCategories(categories);
-  }, []);
 
-  const categories = [
+  const categoriess = useMemo(() => [
     { id: 1, name: "Facility Management", icon: "fa-cart-shopping" },
     { id: 2, name: "Courier Transportation", icon: "fa-truck-fast" },
     { id: 3, name: "Apparel", icon: "fa-brands fa-shopify" },
@@ -21,13 +20,19 @@ const Categories = () => {
     { id: 8, name: "Cloths", icon: "fa-brands fa-shopify" },
     { id: 9, name: "Kitchen", icon: "fa-cart-shopping" },
     { id: 10, name: "Sprouts", icon: "fa-truck-fast" },
-  ];
+  ],[]);
+
+  useEffect(() => {
+    setFilteredCategories(categoriess);
+  }, [categoriess]);
+
+
 
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
 
-    const filtered = categories.filter((category) =>
+    const filtered = categoriess.filter((category) =>
       category.name.toLowerCase().includes(query)
     );
     setFilteredCategories(filtered);
