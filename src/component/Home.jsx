@@ -31,24 +31,24 @@ const Home = () => {
             >
               <ul className="navbar-nav  fs-16  me-auto mb-2 mb-lg-0 ">
                 <li className="nav-item ">
-                  <a
+                  <Link to="./categories"
                     className="nav-link fw-500 text_black fs-16"
                     aria-current="page"
                    
                   >
-                    Deals
-                  </a>
+                    Categories
+                  </Link>
                 </li>
                 <li className="nav-item  ms-lg-4">
-                  <a className="nav-link fw-500 text_black fs-16">
-                    What's New
-                  </a>
+                  <Link to='/categories-details' className="nav-link fw-500 text_black fs-16">
+                  Categories Details
+                  </Link>
                 </li>
                 <li className="nav-item  ms-lg-4">
-                  <a className="nav-link fw-500 text_black fs-16">
-                    Delivery
-                  </a>
-                </li>
+                <Link to='/products' className="btn">
+                <span className="fw-500 fs-16 p-0"> Products</span>
+              </Link>
+              </li>
               </ul>
               <form className="d-flex me-4">
                 <input
@@ -58,9 +58,7 @@ const Home = () => {
                   aria-label="Search"
                 />
               </form>
-              <a className="btn">
-                <span className="fw-500 fs-16 p-0"> Login</span>
-              </a>
+              
             </div>
           </div>
         </nav>
@@ -68,7 +66,7 @@ const Home = () => {
       <section className="d-md-none shadow-sm">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center p-2">
-            <a
+            <button
               className="btn btn_success rounded shadow-none"
               data-bs-toggle="offcanvas"
               href="#mobile-navbar"
@@ -76,7 +74,7 @@ const Home = () => {
               aria-controls="mobile-navbar"
             >
               <span className="fa fa-bars fa-lg "></span>
-            </a>
+            </button>
             <form className="d-flex">
               <input
                 className="form-control br-20 fs-16  shadow-none"
@@ -104,27 +102,25 @@ const Home = () => {
             <div className="offcanvas-body py-0">
               <ul className="dropdown mt-3 list-unstyled">
                 <li className="nav-item fs-15">
-                  <a
+                  <Link to="./categories"
                     className="nav-link text_black ps-0"
                     aria-current="page"
                    
                   >
-                    Deals
-                  </a>
+                    Categories
+                  </Link>
                 </li>
                 <li className="nav-item fs-15">
-                  <a className="nav-link text_black ps-0">
-                    What's New
-                  </a>
+                  <Link to="./categories-details" className="nav-link text_black ps-0">
+                    Categories Details
+                  </Link>
                 </li>
                 <li className="nav-item fs-15">
-                  <a className="nav-link text_black ps-0">
-                    Delivery
-                  </a>
+                  <Link to="./products" className="nav-link text_black ps-0">
+                    Products
+                  </Link>
                 </li>
-                <a className="btn px-0 text_darkgreen fw-600 ">
-                  <span className=" fs-15 p-0"> Login</span>
-                </a>
+                
               </ul>
             </div>
           </div>
